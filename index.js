@@ -6,8 +6,6 @@ const progress = require('./progress');
 const lessonRunner = require('./lesson-runner');
 const programOptions = require('./program-options');
 
-console.log(programOptions);
-
 function run() {
   const app = new App(programOptions);
 }

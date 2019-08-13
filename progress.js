@@ -17,7 +17,7 @@ function show() {
     if (err) {
       console.error(err);
     } else {
-      Object.entries(results[keyboardLayout] || []).forEach(item => {
+      Object.entries(results[keyboardLayout] || []).sort().forEach(item => {
         const lvl = level.getLevel(item[1]);
 
         console.log(item[0],

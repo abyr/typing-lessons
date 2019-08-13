@@ -30,7 +30,7 @@ function draw () {
     .replace(/% 5/,   f1('% 5'))
     .replace(/ T /,    f1(' T '))
     .replace(/ F /,    f1(' F '))
-    .replace(/ V /,    f1(' K '))
+    .replace(/ V /,    f1(' V '))
     // Finger 1 Right Hand
     .replace(/\* 8/,   f1('* 8'))
     .replace(/ I /,    f1(' I '))

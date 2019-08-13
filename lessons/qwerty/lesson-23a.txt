@@ -1,0 +1,8 @@
+Lesson 23a: symbols
+func(a, b);
+def abc:
+$a = 0; $b = 1;
+&$x; &$y;
+a^2; b^3; 2^2;
+(a, b) => return {a + b};
+(x, y) => return x - y;

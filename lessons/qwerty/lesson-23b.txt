@@ -1,11 +1,4 @@
-Lesson 23: symbols
-func(a, b);
-def abc:
-$a = 0; $b = 1;
-&$x; &$y;
-a^2; b^3; 2^2;
-(a, b) => return {a + b};
-(x, y) => return x - y;
+Lesson 23b: symbols
 void: abc;
 ((a, b) => (++a++ % ++b++));
 ((x, y) => (--x-- / --y--));

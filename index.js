@@ -5,6 +5,7 @@ const lessons = require('./lessons');
 const progress = require('./progress');
 const lessonRunner = require('./lesson-runner');
 const programOptions = require('./program-options');
+const textGenerator = require('./text-generator');
 
 function run() {
   const app = new App(programOptions);
@@ -63,6 +64,10 @@ App.prototype.run = function () {
     this.showKeyboard();
   }
 
+  if (this.options.random) {
+    this.startRandomWords();
+  }
+
   if (this.options.list) {
     this.showLessonsList();
   }
@@ -93,6 +98,15 @@ App.prototype.showOverallSummary = function () { };
 
 App.prototype.showProgress = function () {
   progress.show();
+};
+
+App.prototype.startRandomWords = function (count = 10) {
+  const words = textGenerator.getRandomWords(count);
+
+  words.unshift('Lesson 100: ' + count);
+  words.push('');
+
+  lessonRunner.beginLesson(words);
 };
 
 App.prototype.startNextLesson = function () {

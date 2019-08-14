@@ -126,4 +126,6 @@ function beginLesson (lines) {
   });
 }
 
+lessonRunner.beginLesson = beginLesson;
+
 module.exports = lessonRunner;

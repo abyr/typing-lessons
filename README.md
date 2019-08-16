@@ -3,11 +3,12 @@
 Keyboard layouts supported:
 - [X] dvorak programmers (https://github.com/F1LT3R/dvorak-programmers-tutorial)
 - [X] qwerty
+- [ ] йцукен (russian-qwerty)
 
 # Usage
 
 ```
-node index keyboard=<layout> [print] [lesson=<num>] [next] [list] [progress] [save=<path>]
+node index keyboard=<layout> [print] [lesson=<num>] [next] [list] [progress] [save=<path>] random
 ```
 
 # Options
@@ -39,6 +40,10 @@ Show progress. Requires keyboard layout specified
 `list`
 
 Show lessons list. Requires keyboard layout specified
+
+`random`
+
+Type random words
 
 # Links
 

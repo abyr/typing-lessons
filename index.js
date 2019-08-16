@@ -1,17 +1,17 @@
-const pkg = require('./package.json');
 const keyboardFactory = require('./keyboard-factory');
-const fs = require('fs');
 const lessons = require('./lessons');
 const progress = require('./progress');
 const lessonRunner = require('./lesson-runner');
-const programOptions = require('./program-options');
 const textGenerator = require('./text-generator');
+const programOptions = require('./program-options');
 
 function run() {
   const app = new App(programOptions);
 }
 
 function App(options) {
+  this.lang = 'en';
+
   if (options) {
     this.options = options;
   } else {
@@ -57,6 +57,10 @@ App.prototype.init = function () {
   progress.setKeyboardLayout(this.options.keyboard);
 
   lessons.setKeyboardLayout(this.options.keyboard);
+
+  if (this.options.keyboard.indexOf('rus') > -1) {
+    this.lang = 'ru';
+  }
 };
 
 App.prototype.run = function () {
@@ -100,13 +104,14 @@ App.prototype.showProgress = function () {
   progress.show();
 };
 
-App.prototype.startRandomWords = function (count = 10) {
-  const words = textGenerator.getRandomWords(count);
+App.prototype.startRandomWords = function (count = 5) {
+  const words = textGenerator.getRandomWords(count, this.lang);
+  let lines = ['Lesson 100: ' + count];
 
-  words.unshift('Lesson 100: ' + count);
-  words.push('');
+  lines.push(words);
+  lines.push('');
 
-  lessonRunner.beginLesson(words);
+  lessonRunner.beginLesson(lines);
 };
 
 App.prototype.startNextLesson = function () {

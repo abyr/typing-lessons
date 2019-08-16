@@ -15,10 +15,7 @@ const lessonRunner = {
 
 var fail = clc.bgRed.white;
 var pass = clc.bgGreen.black;
-var complete = clc.green.underline;
 var white = clc.white;
-var green = clc.green;
-var red = clc.red;
 var title = clc.underline;
 
 function beginLesson (lines) {

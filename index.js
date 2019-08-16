@@ -111,7 +111,11 @@ App.prototype.startRandomWords = function (count = 5) {
   lines.push(words);
   lines.push('');
 
-  lessonRunner.beginLesson(lines);
+  lessonRunner.run(lines, {
+    onFinish: results => {
+      progress.addLessonResults('random', results);
+    }
+  });
 };
 
 App.prototype.startNextLesson = function () {

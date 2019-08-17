@@ -63,7 +63,7 @@ function draw () {
     .replace(/ X /,    f3(' X '))
     .replace(/Cmd/,  f3('Cmd'))
     // Finger 3 Right Hand
-    .replace(/\) 0/,   f3('} 6'))
+    .replace(/\) 0/,   f3(') 0'))
     .replace(/ P /,    f3(' P '))
     .replace(/ L /,    f3(' L '))
     .replace(/> ./,    f3('> .'))
@@ -87,7 +87,7 @@ function draw () {
   //   // Finger 5 Right Hand
     .replace(/\+ =/,      f5('+ ='))
     .replace(/\} \]/,     f5('} ]'))
-    .replace(/\|\s\\/,     f5("| \\"))
+    // .replace(/\|\s\\/,    f5("| \\"))
     .replace(/" '/,       f5('" \''))
     .replace(/  Shift  /, f5('  Shift  '))
     .replace(/   Alt   /, f5('   Alt   '))

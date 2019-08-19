@@ -146,7 +146,7 @@ App.prototype.startLesson = function () {
 };
 
 App.prototype.showHelp = function () {
-  console.log(`Usage: node index keyboard=<layout> [print] [lesson=<num>] [next] [list] [progress] [save=<path>]
+  console.log(`Usage: node index keyboard=<layout> [print] [lesson=<num>] [next] [list] [progress] [save=<path>] random
 Options:
 keyboard: <layout name>
   Apply keyboard layout. Available layouts: qwerty, dvorak-pro
@@ -162,6 +162,8 @@ progress
   Show progress. Requires keyboard layout specified
 list
   Show lessons list. Requires keyboard layout specified
+random
+  Type random words
   `);
 };
 

@@ -85,9 +85,6 @@ function addLessonResults (lessonId, newResults) {
         wpm: 0
       };
 
-      const errorsRegression = newResults.totalErrors > lastResult.totalErrors;
-      const speedRegression = newResults.wpm < lastResult.wpm;
-
       const current_stats = newResults;
 
       const current_level = level.getLevel(current_stats);
@@ -103,14 +100,9 @@ function addLessonResults (lessonId, newResults) {
 }
 
 function showLessonResult (current_level, current_stats, lastResult) {
-
-    var fail = clc.bgRed.white;
-    var pass = clc.bgGreen.black;
-    var complete = clc.green.underline;
     var white = clc.white;
     var green = clc.green;
     var red = clc.red;
-    var title = clc.underline;
 
   const errorsRegression = current_stats.totalErrors > lastResult.totalErrors;
   const speedRegression = current_stats.wpm < lastResult.wpm;
@@ -118,10 +110,20 @@ function showLessonResult (current_level, current_stats, lastResult) {
   console.log('Level:', current_level.title);
 
   console.log(white('Total errors:', current_stats.totalErrors));
-  console.log('Last result:', lastResult.totalErrors, errorsRegression ? red('Regression') : green('Success'));
+
+  if (lastResult) {
+    console.log('Last result:', lastResult.totalErrors, errorsRegression ?
+      red('Regression') :
+      green('Success'));
+  }
 
   console.log(white('Words Per Minute: ' + current_stats.wpm));
-  console.log('Last result:', lastResult.wpm, speedRegression ? red('Regression') : green('Success'));
+
+  if (lastResult) {
+    console.log('Last result:', lastResult.wpm, speedRegression ?
+      red('Regression') :
+      green('Success'));
+  }
 }
 
 function save(results, done) {
@@ -137,4 +139,12 @@ function save(results, done) {
   });
 }
 
-module.exports = { setKeyboardLayout, save, load, setProgressFile, getProgressFile, show, addLessonResults };
+module.exports = {
+  setKeyboardLayout,
+  save,
+  load,
+  setProgressFile,
+  getProgressFile,
+  show,
+  addLessonResults
+};

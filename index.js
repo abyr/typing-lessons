@@ -41,7 +41,7 @@ App.prototype.validate = function () {
   this.errors = [];
 
   if (this.options.keyboard === '1') {
-    this.errors.push('Keyboard is not specified. Available keyboards: qwerty, dvorak-pro.');
+    this.errors.push('Keyboard is not specified. Available keyboards: en(qwerty), dvorak-pro, ru(russian-qwerty йцукен)');
   }
 
   if (this.options.save && !this.options.save.match(/.json/)) {
@@ -58,7 +58,7 @@ App.prototype.init = function () {
 
   lessons.setKeyboardLayout(this.options.keyboard);
 
-  if (this.options.keyboard.indexOf('rus') > -1) {
+  if (this.options.keyboard.indexOf('ru') > -1) {
     this.lang = 'ru';
   }
 };

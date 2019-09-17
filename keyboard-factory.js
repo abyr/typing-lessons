@@ -4,8 +4,10 @@ const dvorakPro = require('./keyboards/dvorak-pro');
 
 function make(keyboardName) {
   switch (keyboardName) {
+    case 'en':
     case 'qwerty':
       return qwerty;
+    case 'ru':
     case 'russian-qwerty':
         return russianQwerty;
     case 'dvorak-pro':

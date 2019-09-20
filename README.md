@@ -11,6 +11,12 @@ Keyboard layouts supported:
 node index keyboard=<layout> [print] [lesson=<num>] [next] [list] [progress] [save=<path>] random
 ```
 
+# Progress
+
+Progress is calculated as a summary of accuracy ratio and typing speed.
+
+Average ratio is taken as 44 words per minute.
+
 # Options
 
 `keyboard: <layout-name>`

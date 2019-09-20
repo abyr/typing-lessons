@@ -18,9 +18,11 @@ function show() {
       console.error(err);
     } else {
       Object.entries(results[keyboardLayout] || []).sort().forEach(item => {
-        const lvl = level.getLevel(item[1]);
+        const levelNumber = item[0];
+        const stats = item[1];
+        const lvl = level.getLevel(stats);
 
-        console.log(item[0],
+        console.log(levelNumber,
                     lvl.ratio > 0.8 ? clc.green(lvl.title) :
                       lvl.ratio < 0.4 ? clc.red(lvl.title) :
                         lvl.title);

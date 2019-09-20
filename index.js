@@ -150,7 +150,7 @@ App.prototype.startLesson = function () {
 };
 
 App.prototype.showHelp = function () {
-  console.log(`Usage: node index keyboard=<layout> [print] [lesson=<num>] [next] [list] [progress] [save=<path>] random
+  console.log(`Usage: node index keyboard=<layout> [print] [lesson=<num>] [next] [list] [progress] [save=<path>] random wpm=<wpm>
 Options:
 keyboard: <layout name>
   Apply keyboard layout. Available layouts: en (qwerty), dvorak-pro, ru

@@ -13,9 +13,13 @@ function App(options) {
   this.lang = 'en';
 
   if (options) {
-    this.options = options;
+    this.options = Object.assign({}, options);
   } else {
     return this.showHelp();
+  }
+
+  if (this.options.keyboard === 'en') {
+    this.options.keyboard = 'qwerty';
   }
 
   if (this.options.help) {
@@ -41,7 +45,7 @@ App.prototype.validate = function () {
   this.errors = [];
 
   if (this.options.keyboard === '1') {
-    this.errors.push('Keyboard is not specified. Available keyboards: en(qwerty), dvorak-pro, ru(russian-qwerty йцукен)');
+    this.errors.push('Keyboard is not specified. Available keyboards: en(qwerty), dvorak-pro, ru');
   }
 
   if (this.options.save && !this.options.save.match(/.json/)) {
@@ -52,15 +56,15 @@ App.prototype.validate = function () {
 App.prototype.init = function () {
   this.progressFile = this.options.save || 'progress.json';
 
+  if (this.options.keyboard === 'ru') {
+    this.lang = 'ru';
+  }
+
   progress.setProgressFile(this.progressFile);
 
   progress.setKeyboardLayout(this.options.keyboard);
 
   lessons.setKeyboardLayout(this.options.keyboard);
-
-  if (this.options.keyboard.indexOf('ru') > -1) {
-    this.lang = 'ru';
-  }
 };
 
 App.prototype.run = function () {
@@ -149,7 +153,7 @@ App.prototype.showHelp = function () {
   console.log(`Usage: node index keyboard=<layout> [print] [lesson=<num>] [next] [list] [progress] [save=<path>] random
 Options:
 keyboard: <layout name>
-  Apply keyboard layout. Available layouts: qwerty, dvorak-pro
+  Apply keyboard layout. Available layouts: en (qwerty), dvorak-pro, ru
 print
   Print keyboard layout on a screen
 lesson: <number>

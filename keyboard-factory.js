@@ -1,5 +1,5 @@
 const qwerty = require('./keyboards/qwerty');
-const russianQwerty = require('./keyboards/russian-qwerty');
+const russianQwerty = require('./keyboards/russian');
 const dvorakPro = require('./keyboards/dvorak-pro');
 
 function make(keyboardName) {
@@ -8,7 +8,6 @@ function make(keyboardName) {
     case 'qwerty':
       return qwerty;
     case 'ru':
-    case 'russian-qwerty':
         return russianQwerty;
     case 'dvorak-pro':
       return dvorakPro;

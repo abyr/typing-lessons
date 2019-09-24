@@ -92,6 +92,16 @@ App.prototype.run = function () {
   }
 };
 
+App.prototype.showKeyboard = function () {
+  const keyboard = keyboardFactory.make(this.options.keyboard);
+
+  keyboard.draw();
+};
+
+App.prototype.showLessonsList = function () {
+  lessons.showList(this.options.keyboard);
+};
+
 App.prototype.showSummary = function () {
   if (this.lessonId) {
     this.showLessonSummary();
@@ -169,16 +179,6 @@ list
 random
   Type random words
   `);
-};
-
-App.prototype.showKeyboard = function () {
-  const keyboard = keyboardFactory.make(this.options.keyboard);
-
-  keyboard.draw();
-};
-
-App.prototype.showLessonsList = function () {
-  lessons.showList(this.options.keyboard);
 };
 
 run();

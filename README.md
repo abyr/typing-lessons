@@ -15,7 +15,11 @@ node index keyboard=<layout> [print] [lesson=<num>] [next] [list] [progress] [sa
 
 Progress is calculated as a summary of accuracy ratio and typing speed.
 
-Average ratio is taken as 44 words per minute.
+Accuracy ratio is based on misprints made during a lesson.
+
+Typing speed as based on words per minute according to average typing speed.
+
+Average typing speed is taken as 44 words per minute.
 
 # Options
 

@@ -2,8 +2,8 @@
 
 Keyboard layouts supported:
 - [X] dvorak programmers (https://github.com/F1LT3R/dvorak-programmers-tutorial)
-- [X] qwerty
-- [ ] йцукен (russian-qwerty)
+- [X] qwerty (en)
+- [ ] йцукен (ru)
 
 # Usage
 

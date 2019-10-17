@@ -102,9 +102,9 @@ function addLessonResults (lessonId, newResults) {
 }
 
 function showLessonResult (current_level, current_stats, lastResult) {
-    var white = clc.white;
-    var green = clc.green;
-    var red = clc.red;
+  const white = clc.white;
+  const green = clc.green;
+  const red = clc.red;
 
   const errorsRegression = current_stats.totalErrors > lastResult.totalErrors;
   const speedRegression = current_stats.wpm < lastResult.wpm;

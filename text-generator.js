@@ -1,5 +1,5 @@
-const engWords = require('./langs/en');
-const rusWords = require('./langs/ru');
+const engWords = require('./dicts/en');
+const rusWords = require('./dicts/ru');
 
 function getRandomWord(lang = 'en') {
     let wordsList;
